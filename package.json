@@ -38,15 +38,12 @@
     "request": "2.83.0",
     "request-promise": "4.2.2",
     "resumer": "0.0.0",
-    "rewire": "3.0.2",
-    "sinon": "4.4.3",
     "test-listen": "1.0.2",
     "then-sleep": "1.0.1"
   },
   "dependencies": {
-    "arg": "4.1.0",
+    "arg": "4.1.1",
     "content-type": "1.0.4",
-    "is-stream": "1.1.0",
     "raw-body": "2.3.2"
   },
   "jest": {
