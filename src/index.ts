@@ -73,8 +73,7 @@ class MicriBodyError extends MicriError {
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-const readable = (stream: any) =>
-	stream !== null &&
+const isReadable = (stream: any) =>
 	typeof stream === 'object' &&
 	typeof stream.pipe === 'function' &&
 	stream.readable !== false &&
@@ -99,7 +98,7 @@ export function send(res: ServerResponse, statusCode: number, obj: any = null) {
 		return;
 	}
 
-	if (obj instanceof Stream || readable(obj)) {
+	if (obj instanceof Stream || isReadable(obj)) {
 		if (!res.getHeader('Content-Type')) {
 			res.setHeader('Content-Type', 'application/octet-stream');
 		}
