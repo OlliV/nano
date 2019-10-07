@@ -10,6 +10,7 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "removeComments": true,
     "outDir": "./lib",
     "strict": true,
     "target": "ES2018",

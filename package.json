@@ -2,9 +2,8 @@
   "name": "micri",
   "version": "1.1.0",
   "description": "Asynchronous HTTP microservices",
-  "main": "./lib/index.js",
+  "main": "./lib/micri.js",
   "files": [
-    "bin",
     "lib"
   ],
   "scripts": {
@@ -16,7 +15,7 @@
     "prettier": "prettier --write './{src,test}/**/*.ts'"
   },
   "bin": {
-    "micri": "./bin/micri.js"
+    "micri": "./lib/micri.js"
   },
   "engines": {
     "node": ">= 8.0.0"
