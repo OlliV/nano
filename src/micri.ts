@@ -32,15 +32,7 @@ if (require.main === module) {
 		'--help': Boolean,
 
 		'--version': Boolean,
-		'-v': '--version',
-
-		// Deprecated options
-		'--port': Number,
-		'-p': '--port',
-		'--host': String,
-		'-h': '--host',
-		'--unix-socket': String,
-		'-s': '--unix-socket'
+		'-v': '--version'
 	});
 	args['--listen'] = args['--listen'] || [];
 
