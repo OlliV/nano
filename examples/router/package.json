@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf ./lib ./micri && mkdir ./micri && cp ../../dist/* ./micri && tsc",
-    "start": "micri"
+    "start": "node lib/"
   },
   "devDependencies": {
     "@types/node": "12.7.11",
