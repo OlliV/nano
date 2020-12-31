@@ -11,7 +11,9 @@ import { MicriError } from './errors';
 
 const { NODE_ENV } = process.env;
 const DEV = NODE_ENV === 'development';
-const jsonStringify = DEV ? (obj: any) => JSON.stringify(obj, null, 2) : (obj: any) => JSON.stringify(obj);
+const jsonStringify = DEV
+	? (obj: any): string => JSON.stringify(obj, null, 2)
+	: (obj: any): string => JSON.stringify(obj);
 
 // Returns a `boolean` for whether the argument is a `stream.Readable`.
 //

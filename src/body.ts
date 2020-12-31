@@ -62,7 +62,7 @@ export async function text(
 	}
 }
 
-function parseJSON(str: string) {
+function parseJSON(str: string): ReturnType<typeof JSON.parse> {
 	try {
 		return JSON.parse(str);
 	} catch (err) {

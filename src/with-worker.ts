@@ -2,7 +2,7 @@ import path from 'path';
 import { IncomingMessage, ServerResponse } from 'http';
 import { buffer } from './body';
 import {
-	// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	SHARE_ENV,
 	Worker,
@@ -36,9 +36,9 @@ export default function withWorker<OptsType = any>(
 	return async (req: IncomingMessage, res: ServerResponse, opts: OptsType) => {
 		const body = await buffer(req, { limit: workerOpts?.limit ?? undefined });
 
-		return new Promise((resolve, reject) => {
+		return new Promise<void>((resolve, reject) => {
 			const worker = new Worker(trampoline, {
-				// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 				// @ts-ignore
 				env: workerOpts?.env || SHARE_ENV,
 				eval: true,
