@@ -127,7 +127,7 @@ micri(router(
 Micri supports offloading computationally heavy request handlers to worker
 threads seamlessly. The offloading is configured per handler by wrapping the
 handler function with `withWorker()`. It works directly at the top-level or per
-route when using the router. See [worker-threads](examples/worker-threads) for
+route when using the router. See [with-workerthreads](examples/with-worker) for
 a couple of examples how to use it.
 
 ```js
