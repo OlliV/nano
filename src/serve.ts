@@ -76,7 +76,7 @@ export function send(res: ServerResponse, statusCode: number, obj: any = null) {
 	let str: string = obj;
 	const typeObj = typeof obj;
 
-	if (typeObj === 'object' || typeObj === 'number' || typeObj === 'boolean') {
+	if (typeObj === 'object' || typeObj === 'number' || typeObj === 'boolean') {
 		// We stringify before setting the header
 		// in case `JSON.stringify` throws and a
 		// 500 has to be sent instead
