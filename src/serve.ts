@@ -15,36 +15,7 @@ const jsonStringify = DEV
 	? (obj: any): string => JSON.stringify(obj, null, 2)
 	: (obj: any): string => JSON.stringify(obj);
 
-// Returns a `boolean` for whether the argument is a `stream.Readable`.
-//
-// MIT License
-//
-// Copyright (c) Olli Vanhoja <olli.vanhoja@gmail.com>
-// Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
-const isReadable = (stream: any) =>
-	typeof stream === 'object' &&
-	typeof stream.pipe === 'function' &&
-	stream.readable !== false &&
-	typeof stream._read === 'function' &&
-	typeof stream._readableState === 'object';
+const isStream = data => !!data && typeof data.pipe === 'function'
 
 export function send(res: ServerResponse, statusCode: number, obj: any = null) {
 	res.statusCode = statusCode;
@@ -63,8 +34,8 @@ export function send(res: ServerResponse, statusCode: number, obj: any = null) {
 		res.end(obj);
 		return;
 	}
-
-	if (obj instanceof Stream || isReadable(obj)) {
+	
+	if (isStream(obj)) {
 		if (!res.getHeader('Content-Type')) {
 			res.setHeader('Content-Type', 'application/octet-stream');
 		}
