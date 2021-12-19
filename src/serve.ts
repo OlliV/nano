@@ -33,7 +33,7 @@ export function send(res: ServerResponse, statusCode: number, obj: any = null) {
 		res.end(obj);
 		return;
 	}
-	
+
 	if (isStream(obj)) {
 		if (!res.getHeader('Content-Type')) {
 			res.setHeader('Content-Type', 'application/octet-stream');
