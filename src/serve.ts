@@ -1,6 +1,5 @@
 // Native
 import { IncomingMessage, ServerResponse, IncomingHttpHeaders, Server, createServer } from 'http';
-import { Stream } from 'stream';
 
 // Packages
 import contentType from 'content-type';
@@ -15,7 +14,7 @@ const jsonStringify = DEV
 	? (obj: any): string => JSON.stringify(obj, null, 2)
 	: (obj: any): string => JSON.stringify(obj);
 
-const isStream = data => !!data && typeof data.pipe === 'function'
+const isStream = data => !!data && typeof data.pipe === 'function';
 
 export function send(res: ServerResponse, statusCode: number, obj: any = null) {
 	res.statusCode = statusCode;
