@@ -14,7 +14,7 @@ const jsonStringify = DEV
 	? (obj: any): string => JSON.stringify(obj, null, 2)
 	: (obj: any): string => JSON.stringify(obj);
 
-const isStream = data => !!data && typeof data.pipe === 'function';
+const isStream = (data: any) => !!data && typeof data.pipe === 'function';
 
 export function send(res: ServerResponse, statusCode: number, obj: any = null) {
 	res.statusCode = statusCode;
