@@ -55,6 +55,10 @@ export function send(res: ServerResponse, statusCode: number, obj: any = null) {
 		if (!res.getHeader('Content-Type')) {
 			res.setHeader('Content-Type', 'application/json; charset=utf-8');
 		}
+	} else {
+		if (!res.getHeader('Content-Type')) {
+			res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+		}
 	}
 
 	res.setHeader('Content-Length', Buffer.byteLength(str));
