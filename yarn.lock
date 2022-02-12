@@ -710,6 +710,11 @@
     "@typescript-eslint/types" "4.11.1"
     eslint-visitor-keys "^2.0.0"
 
+"@vercel/ncc@0.33.2":
+  version "0.33.2"
+  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.33.2.tgz#913ea6e0884921d3b8abce26409b01713e2d8581"
+  integrity sha512-rzl7vNljla3/qZeHDlk8k+4LYGI793LewFgrnPRBBMdpUdJNoy8wJ/bYDzKWbTbmPfWzHgkiBZsynW12JrAMdg==
+
 "@zeit/fetch-retry@4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@zeit/fetch-retry/-/fetch-retry-4.0.1.tgz#202c429a04f6bc4b38f874e475932ae4242b0ef1"
@@ -722,11 +727,6 @@
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@zeit/git-hooks/-/git-hooks-0.1.4.tgz#70583db5dd69726a62c7963520e67f2c3a33cc5f"
   integrity sha512-NvgZgoYJ/n27Ly7lKxKttMIKSS8P4dr1EURgTmqihHVdTAEqVtkAYPT5XykZIR+GKz8WRGyEQVJekwSgvjYQLg==
-
-"@zeit/ncc@0.21.1":
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/@zeit/ncc/-/ncc-0.21.1.tgz#44fd4359c54ba34a018a5ccf7a315489db20a733"
-  integrity sha512-M9WzgquSOt2nsjRkYM9LRylBLmmlwNCwYbm3Up3PDEshfvdmIfqpFNSK8EJvR18NwZjGHE5z2avlDtYQx2JQnw==
 
 abab@^2.0.3:
   version "2.0.5"
@@ -4133,10 +4133,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@4.1.3:
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.3.tgz#519d582bd94cba0cf8934c7d8e8467e473f53bb7"
-  integrity sha512-B3ZIOf1IKeH2ixgHhj6la6xdwR9QrLC5d1VKeCSY4tvkqhF2eqd9O7txNlS0PO3GrBAFIdr3L1ndNwteUbZLYg==
+typescript@4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
+  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
 
 union-value@^1.0.0:
   version "1.0.1"

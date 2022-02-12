@@ -29,7 +29,7 @@ export async function buffer(
 		rawBodyMap.set(req, buf);
 
 		return buf;
-	} catch (err) {
+	} catch (err: any) {
 		throw new MicriBodyError(err, limit);
 	}
 }
@@ -57,7 +57,7 @@ export async function text(
 
 		// toString() shouldn't be needed here but it doesn't hurt
 		return buf.toString();
-	} catch (err) {
+	} catch (err: any) {
 		throw new MicriBodyError(err, limit);
 	}
 }
@@ -65,7 +65,7 @@ export async function text(
 function parseJSON(str: string): ReturnType<typeof JSON.parse> {
 	try {
 		return JSON.parse(str);
-	} catch (err) {
+	} catch (err: any) {
 		throw new MicriError(400, 'invalid_json', 'Invalid JSON', err);
 	}
 }
