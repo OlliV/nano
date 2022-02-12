@@ -346,7 +346,7 @@ test('custom error', async () => {
 	const handleErrors = (ofn: MicriHandler) => (req: IncomingMessage, res: ServerResponse) => {
 		try {
 			return ofn(req, res);
-		} catch (err) {
+		} catch (err: any) {
 			send(res, 400, 'My custom error!');
 		}
 	};
@@ -368,7 +368,7 @@ test('custom async error', async () => {
 	const handleErrors = (ofn: MicriHandler) => async (req: IncomingMessage, res: ServerResponse) => {
 		try {
 			return await ofn(req, res);
-		} catch (err) {
+		} catch (err: any) {
 			send(res, 400, 'My custom error!');
 		}
 	};
@@ -455,7 +455,7 @@ test('json limit (over)', async () => {
 			await json(req, {
 				limit: 3,
 			});
-		} catch (err) {
+		} catch (err: any) {
 			expect(err.statusCode).toBe(413);
 			throw err;
 		}
@@ -516,7 +516,7 @@ test('limit included in error', async () => {
 			body = await json(req, {
 				limit: 3,
 			});
-		} catch (err) {
+		} catch (err: any) {
 			expect(err.message).toEqual(expect.stringContaining('exceeded 3B limit'));
 			throw err;
 		}
