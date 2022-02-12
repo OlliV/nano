@@ -6,9 +6,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@turist/fetch": "7.1.6",
+    "@turist/fetch": "7.2.0",
     "micri": "../../dist",
-    "node-fetch": "2.6.1"
+    "node-fetch": "2.6.7"
   },
   "author": "",
   "license": "MIT"
