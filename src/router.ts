@@ -10,17 +10,15 @@ type OnFunction<OptsType> = (
 	hndl: MicriHandler<OptsType>
 ) => [Predicate<OptsType>, MicriHandler<OptsType>];
 
-const router = <OptsType = any>(...rest: [Predicate<OptsType>, MicriHandler<OptsType>][]): MicriHandler<OptsType> => (
-	req: IncomingMessage,
-	res: ServerResponse,
-	opts?: OptsType
-): any =>
-	(rest.find((route) => route[0](req, res, opts)) || [
-		null,
-		(): void => {
-			throw Error('No matching route was found');
-		},
-	])[1](req, res, opts);
+const router =
+	<OptsType = any>(...rest: [Predicate<OptsType>, MicriHandler<OptsType>][]): MicriHandler<OptsType> =>
+	(req: IncomingMessage, res: ServerResponse, opts?: OptsType): any =>
+		(rest.find((route) => route[0](req, res, opts)) || [
+			null,
+			(): void => {
+				throw Error('No matching route was found');
+			},
+		])[1](req, res, opts);
 
 const onInit: { [index: string]: OnFunction<any> } = {};
 const on = METHODS.map((method) => [
