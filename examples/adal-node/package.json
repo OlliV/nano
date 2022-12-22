@@ -16,7 +16,7 @@
     "@types/jsonwebtoken": "8.3.9",
     "adal-node": "0.2.1",
     "cookies": "0.8.0",
-    "jsonwebtoken": "8.5.1",
+    "jsonwebtoken": "9.0.0",
     "micri": "../../dist"
   }
 }
